@@ -1,1 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WER</title>
+  <link rel="stylesheet" href="voixa4.css">
+</head>
+<body>
 
+<div class="container">
+<h2>Word Error Rate</h2>
+
+<input id="ref" placeholder="Original">
+<input id="hyp" placeholder="Recognized">
+
+<button onclick="calc()">Calculate</button>
+
+<p id="result"></p>
+
+</div>
+
+<script>
+function calc(){
+  let r = document.getElementById("ref").value.split(" ");
+  let h = document.getElementById("hyp").value.split(" ");
+  let err = Math.abs(r.length - h.length);
+  let wer = (err / r.length) * 100;
+  document.getElementById("result").innerText = "WER: " + wer.toFixed(2) + "%";
+}
+</script>
+
+</body>
+</html>
