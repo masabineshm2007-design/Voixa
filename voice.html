@@ -1,50 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Voice</title>
+  <title>Voixa Voice</title>
   <link rel="stylesheet" href="voixa4.css">
 </head>
 <body>
 
 <div class="container">
 
-<h2>Voice Translator</h2>
+<h2>🎤 Voice Translator</h2>
 
+<!-- INPUT LANG -->
 <select id="inputLang">
   <option value="ta-IN">Tamil</option>
   <option value="hi-IN">Hindi</option>
   <option value="te-IN">Telugu</option>
   <option value="kn-IN">Kannada</option>
   <option value="ml-IN">Malayalam</option>
+  <option value="bn-IN">Bengali</option>
+  <option value="gu-IN">Gujarati</option>
+  <option value="mr-IN">Marathi</option>
+  <option value="pa-IN">Punjabi</option>
+  <option value="or-IN">Odia</option>
+  <option value="as-IN">Assamese</option>
+  <option value="ur-IN">Urdu</option>
+  <option value="sa-IN">Sanskrit</option>
+  <option value="kok-IN">Konkani</option>
+  <option value="ne-IN">Nepali</option>
 </select>
 
+<!-- TARGET LANG -->
 <select id="targetLang">
   <option value="en">English</option>
   <option value="ta">Tamil</option>
   <option value="hi">Hindi</option>
+  <option value="te">Telugu</option>
+  <option value="kn">Kannada</option>
+  <option value="ml">Malayalam</option>
+  <option value="bn">Bengali</option>
+  <option value="gu">Gujarati</option>
+  <option value="mr">Marathi</option>
+  <option value="pa">Punjabi</option>
+  <option value="ur">Urdu</option>
+  <option value="ne">Nepali</option>
 </select>
 
 <br><br>
 
-<button onclick="startVoice()">🎤 Start</button>
+<button onclick="startVoice()">🎤 Start Voice</button>
 
 <p id="original"></p>
 <p id="translated"></p>
 
 <button onclick="speak()">🔊 Speak</button>
 
-<br><br>
-<button onclick="goNext()">Next (WER)</button>
-
 </div>
 
 <script src="voixa1.js"></script>
-
-<script>
-function goNext(){
-  window.location.href = "wer.html";
-}
-</script>
 
 </body>
 </html>
