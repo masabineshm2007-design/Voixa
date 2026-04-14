@@ -1,25 +1,37 @@
 body {
   margin: 0;
   font-family: Arial;
-  background: linear-gradient(135deg, #6a11cb, #ff6a00);
-  color: white;
-  text-align: center;
+  background: #0a1f44; /* dark blue */
+  color: black;
 }
 
 .container {
-  margin-top: 100px;
+  text-align: center;
+  margin-top: 120px;
+}
+
+h1, h2 {
+  color: black;
 }
 
 button {
   padding: 12px 25px;
   border-radius: 10px;
   border: none;
-  background: black;
-  color: white;
+  background: #00c3ff;
+  color: black;
+  font-size: 16px;
   margin: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0099cc;
 }
 
 select, input {
   padding: 10px;
   margin: 10px;
+  border-radius: 8px;
+  border: none;
 }
