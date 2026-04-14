@@ -3,25 +3,35 @@ const translated = document.getElementById("translated");
 
 let finalText = "";
 
-function startVoice(){
+function startVoice() {
 
   const lang = document.getElementById("inputLang").value;
 
   const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  if (!SpeechRecognition) {
+    alert("Browser not supported. Use Chrome.");
+    return;
+  }
+
   const recognition = new SpeechRecognition();
 
   recognition.lang = lang;
   recognition.start();
 
-  recognition.onresult = function(e){
-    finalText = e.results[0][0].transcript;
-    original.innerText = "Original: " + finalText;
+  recognition.onresult = function(event) {
+    finalText = event.results[0][0].transcript;
+    original.innerText = "You said: " + finalText;
 
-    translate(finalText);
+    translateText(finalText);
+  };
+
+  recognition.onerror = function() {
+    alert("Mic not working. Allow microphone.");
   };
 }
 
-function translate(text){
+function translateText(text) {
 
   const target = document.getElementById("targetLang").value;
 
@@ -32,7 +42,7 @@ function translate(text){
     });
 }
 
-function speak(){
+function speak() {
   const msg = new SpeechSynthesisUtterance(translated.innerText);
   speechSynthesis.speak(msg);
 }
